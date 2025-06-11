@@ -1,0 +1,69 @@
+---
+import ArrowRight from "../assets/icons/ArrowRight.astro";
+import ProjectItem from "./ui/ProjectItem.astro";
+
+import project1 from "../assets/images/projects/project-1.jpg";
+import project2 from "../assets/images/projects/project-2.jpg";
+import project3 from "../assets/images/projects/project-3.jpg";
+
+const projects = [
+    {
+        imageSrc: project1,
+        title: "LOREM IPSUM DOLOR SIT",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+        link: "#",
+        reverse: false,
+    },
+    {
+        imageSrc: project2,
+        title: "LOREM IPSUM DOLOR SIT",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+        link: "#",
+        reverse: true,
+    },
+    {
+        imageSrc: project3,
+        title: "LOREM IPSUM DOLOR SIT",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+        link: "#",
+        reverse: false,
+    }
+];
+---
+
+<section class="border-b border-accent" id="projects">
+    <!-- HEADING -->
+    <div class="border-b border-accent h-row-2x">
+        <div class="container flex items-center justify-between mx-auto max-w-6xl pt-row border-l border-r border-accent h-full">
+            <h2 class="inline-flex text-3xl font-bold uppercase px-8 border-l-[12px] border-accent h-full items-center">
+                MY PROJECTS
+            </h2>
+
+            <a href="#projects" class="flex items-center gap-4 py-6 px-8 h-full font-semibold">
+                ALL PROJECTS <ArrowRight />
+            </a>
+        </div>
+    </div>
+
+    <div class="container mx-auto max-w-6xl border-l border-r border-accent">
+        {projects.map((project, index) => (
+            <ProjectItem
+                imageSrc={project.imageSrc}
+                title={project.title}
+                description={project.description}
+                link={project.link}
+                reverse={project.reverse}
+                isLast={index === projects.length - 1}
+            />
+        ))}
+    
+        <div class="p-8 flex justify-center md:hidden border-t border-gray-800">
+            <a href="#" class="bg-gray-800 text-white text-sm font-semibold uppercase px-6 py-3 hover:bg-gray-700 flex items-center">
+                ALL PROJECTS <ArrowRight />
+            </a>
+        </div>
+    </div>
+</section>

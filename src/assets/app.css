@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+    --color-accent: #445663;
+    --color-accent-fade: #d7dfe5;
+
+    --font-space-mono: "Space Mono", monospace;
+
+    --row-height: 80px;
+    --spacing-row: var(--row-height);
+    --spacing-row-2x: calc(var(--row-height) * 2);
+    --spacing-row-3x: calc(var(--row-height) * 3);
+}
+
+html, * {
+    color: var(--color-accent);
+    font-family: var(--font-space-mono);
+    letter-spacing: .05em;
+}
+
+.h-row {
+    height: var(--row-height);
+}
+.h-row-2x {
+    height: calc(var(--row-height) * 2);
+}
+.h-row-3x {
+    height: calc(var(--row-height) * 3);
+}

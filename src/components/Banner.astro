@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+import coverImg from "../assets/images/cover.jpg";
+import ArrowRight from "../assets/icons/ArrowRight.astro";
+---
+
+<section class="border-b border-accent" id="banner">
+    <div
+        class="container mx-auto max-w-6xl border-l border-r border-accent grid grid-cols-1 md:grid-cols-2"
+    >
+        <!-- Headers -->
+        <div class="border-r border-accent">
+            <div class="flex flex-col justify-center border-b border-accent p-8 h-row-2x">
+                <h1 class="text-3xl font-bold uppercase">
+                    LOREM IPSUM DOLOR SIT
+                </h1>
+            </div>
+
+            <div class="flex flex-col justify-center border-b border-accent p-8 h-row-2x">
+                <h2 class="text-3xl font-bold uppercase">LOREM IPSUM.</h2>
+            </div>
+
+            <div class="flex flex-col justify-center p-8 border-b border-accent leading-loose h-row-2x hyphens-auto">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore.
+            </div>
+
+            <div class="grid grid-cols-2 text-sm font-semibold uppercase h-row">
+                <a
+                    href="#projects"
+                    class="flex items-center justify-center gap-4 p-6 bg-accent !text-white"
+                >
+                    OUR PROJECTS
+                    <ArrowRight color="light" />
+                </a>
+                <a
+                    href="#contact"
+                    class="flex items-center justify-center gap-4 p-6 hover:bg-accent-fade"
+                >
+                    WHAT WE DO
+                    <ArrowRight />
+                </a>
+            </div>
+        </div>
+
+        <!-- Image -->
+        <div>
+            <div class="w-full h-full min-h-[300px] md:min-h-full">
+                <Image
+                    src={coverImg}
+                    alt="Cityscape"
+                    class="w-full h-full object-cover"
+                />
+            </div>
+        </div>
+    </div>
+</section>

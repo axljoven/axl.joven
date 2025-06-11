@@ -1,0 +1,86 @@
+---
+const links = [
+    { href: "#about", label: "WHO WE ARE" },
+    { href: "#projects", label: "PROJECTS" },
+    { href: "#offer", label: "OFFERS" },
+    { href: "#contact", label: "SAY HI!" },
+];
+---
+
+<header class="border-b border-accent">
+    <nav
+        class="container max-w-6xl mx-auto flex justify-between items-center border-x border-accent h-row"
+    >
+        <a href="/" class="font-bold gray-800 px-12 border-l-[12px] border-r border-accent h-full flex items-center"> AXL JOVEN </a>
+
+        <div class="flex items-center h-full">
+            <ul class="hidden h-full md:flex text-sm">
+                {links.map((link) => (
+                    <li class="h-full">
+                        <a href={link.href} class:list={[
+                                "inline-flex items-center font-bold h-full px-8 uppercase hover:text-gray-600 hover:bg-accent-fade",
+                                link.href === "#contact" ? "!bg-accent p-8 !text-white" : "",
+                        ]}>
+                            {link.label}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+
+        <!-- TODO:  -->
+        <!-- <div class="md:hidden">
+            <button
+                id="mobile-menu-button"
+                class="text-gray-800 focus:outline-none py-4"
+            >
+                <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div> -->
+    </nav>
+
+    <!-- TODO: Mobile menu -->
+    <!-- <div
+        id="mobile-menu"
+        class="md:hidden hidden bg-white py-4 border-b border-slate-800"
+    >
+        <ul class="flex flex-col items-center space-y-4 text-gray-800">
+            <li><a href="#about" class="hover:text-gray-600">WHO WE ARE</a></li>
+            <li>
+                <a href="#projects" class="hover:text-gray-600">PROJECTS</a>
+            </li>
+            <li><a href="#offer" class="hover:text-gray-600">OFFERS</a></li>
+            <li>
+                <a
+                    href="#contact"
+                    class="bg-gray-800 text-white px-6 py-2 rounded-md hover:bg-gray-700"
+                    >SAY HI!</a
+                >
+            </li>
+        </ul>
+    </div> -->
+</header>
+
+<script>
+    // Simple JavaScript for mobile menu toggle (you can enhance this)
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    }
+</script>

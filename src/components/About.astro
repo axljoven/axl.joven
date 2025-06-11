@@ -1,0 +1,43 @@
+---
+import ArrowRight from "../assets/icons/ArrowRight.astro";
+---
+
+<section class="border-b border-accent" id="about">
+    <!-- HEADING -->
+    <div class="border-b border-accent h-row-2x">
+        <div
+            class="container flex items-center justify-between mx-auto max-w-6xl pt-row border-l border-r border-accent h-full"
+        >
+            <h2
+                class="inline-flex text-3xl font-bold uppercase px-8 border-l-[12px] border-accent h-full items-center"
+            >
+                WHO WE ARE
+            </h2>
+
+            <a
+                href="#about"
+                class="flex items-center gap-4 py-6 px-8 h-full font-semibold"
+            >
+                READ MORE <ArrowRight />
+            </a>
+        </div>
+    </div>
+
+    <div class="container mx-auto max-w-6xl border-l border-r border-accent">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+            <div
+                class="text-2xl p-8 flex flex-col border-b md:border-b-0 md:border-r border-accent"
+            >
+                LOREM IPSUM DOLOR
+            </div>
+
+            <div class="p-8 flex flex-col justify-between">
+                <p class="leading-loose hyphens-auto">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
