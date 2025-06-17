@@ -1,0 +1,39 @@
+---
+import ContactForm from "./ui/ContactForm.tsx";
+---
+
+<section class="border-b border-accent" id="about">
+    <!-- HEADING -->
+    <div class="border-b border-accent h-row-2x">
+        <div
+            class="container flex items-center justify-between mx-auto pt-row border-l border-r border-accent h-full"
+        >
+            <h2
+                class="inline-flex text-3xl font-bold uppercase px-8 border-l-[12px] border-accent h-full items-center"
+            >
+                INTERESTED? SAY HI!
+            </h2>
+        </div>
+    </div>
+
+    <div class="container mx-auto border-x border-accent">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+            <div
+                class="p-16 flex flex-col gap-10 border-b md:border-b-0 md:border-r border-accent"
+            >
+                <h2 class="text-2xl font-bold">GET IN TOUCH</h2>
+                <p class="leading-loose hyphens-auto">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, explicabo.
+                </p>
+            </div>
+
+            <div class="flex flex-col justify-between md:col-span-1">
+                <ContactForm />
+            </div>
+        </div>
+    </div>
+
+    <div class="border-t border-accent">
+        <div class="container mx-auto border-x border-accent h-row"></div>
+    </div>
+</section>

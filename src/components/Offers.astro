@@ -6,30 +6,50 @@ import project1 from "../assets/images/projects/project-1.jpg";
 import project2 from "../assets/images/projects/project-2.jpg";
 import project3 from "../assets/images/projects/project-3.jpg";
 
-const projects = [
+import OfferItem from "./ui/OfferItem.astro";
+
+const offers = [
     {
         imageSrc: project1,
-        title: "LOREM IPSUM DOLOR SIT",
+        title: "Landing Page",
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
         link: "#",
-        reverse: false,
+        price: "5k",
+        details: [
+            "Lorem ipsum dolor sit amet",
+            "Lorem ipsum dolor sit amet consectetur adipiscing elit",
+            "Lorem ipsum dolor sit amet elit",
+            "Lorem ipsum dolor sit amet consectetur",
+        ]
     },
     {
         imageSrc: project2,
-        title: "LOREM IPSUM DOLOR SIT",
+        title: "Multi-Page Site",
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
         link: "#",
-        reverse: true,
+        price: "8k",
+        details: [
+            "Lorem ipsum dolor sit amet",
+            "Lorem ipsum dolor sit amet consectetur adipiscing elit",
+            "Lorem ipsum dolor sit amet elit",
+            "Lorem ipsum dolor sit amet consectetur",
+        ]
     },
     {
         imageSrc: project3,
-        title: "LOREM IPSUM DOLOR SIT",
+        title: "UI Improvements",
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
         link: "#",
-        reverse: false,
+        price: "3.5k",
+        details: [
+            "Lorem ipsum dolor sit amet",
+            "Lorem ipsum dolor sit amet consectetur adipiscing elit",
+            "Lorem ipsum dolor sit amet elit",
+            "Lorem ipsum dolor sit amet consectetur",
+        ]
     }
 ];
 ---
@@ -39,30 +59,31 @@ const projects = [
     <div class="border-b border-accent h-row-2x">
         <div class="container flex items-center justify-between mx-auto pt-row border-l border-r border-accent h-full">
             <h2 class="inline-flex text-3xl font-bold uppercase px-8 border-l-[12px] border-accent h-full items-center">
-                MY PROJECTS
+                What we Offer
             </h2>
 
             <a href="#projects" class="flex items-center gap-4 py-6 px-12 h-full font-semibold text-lg">
-                ALL PROJECTS <ArrowRight />
+                LEARN MORE <ArrowRight />
             </a>
         </div>
     </div>
 
     <div class="container mx-auto border-l border-r border-accent">
-        {projects.map((project, index) => (
-            <ProjectItem
-                imageSrc={project.imageSrc}
-                title={project.title}
-                description={project.description}
-                link={project.link}
-                reverse={project.reverse}
-                isLast={index === projects.length - 1}
-            />
-        ))}
-    
+        <div class="grid grid-cols-1 lg:grid-cols-3">
+            {offers.map((offer, index) => (
+                <OfferItem
+                    title={offer.title}
+                    description={offer.description}
+                    price={offer.price}
+                    details={offer.details}
+                    isLast={index === offers.length - 1}
+                />
+            ))}
+        </div>
+
         <div class="p-8 flex justify-center md:hidden border-t border-gray-800">
             <a href="#" class="bg-gray-800 text-white text-lg font-semibold uppercase px-6 py-3 hover:bg-gray-700 flex items-center">
-                ALL PROJECTS <ArrowRight />
+                LEARN MORE <ArrowRight />
             </a>
         </div>
     </div>

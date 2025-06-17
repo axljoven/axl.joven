@@ -1,0 +1,35 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    details: string[];
+    price: string;
+    isLast?: boolean;
+}
+
+const { title, description, details, price, isLast } = Astro.props;
+---
+
+<div class={`flex flex-col border-r border-accent ${isLast ? "md:border-r-0" : ""}`}>
+    <div class="flex flex-col gap-10 p-16">
+        <!-- Title -->
+        <h3 class="text-2xl font-bold">{title}</h3>
+        
+        <!-- Price -->
+        <p class="leading-loose hyphens-auto text-justify">
+            {description}
+        </p>
+
+        <!-- Details -->
+        <ul class="list-disc list-inside grid gap-2">
+            {details.map((detail) => (
+                <li class="list-outside ml-5 pl-2">{detail}</li>
+            ))}
+        </ul>
+    </div>
+    <!-- Content -->
+    <div class="px-16 py-7.5 h-row mt-auto border-t border-accent flex items-center justify-between">
+        <span class="">Start at: </span>
+        <span class="font-semibold text-2xl">{price}</span>
+    </div>
+</div>
